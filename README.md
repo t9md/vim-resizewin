@@ -10,7 +10,7 @@ KeyMap Example
 ================================
 set following keymap in your .vimrc.
 then split, vsplit several time.
-then try `_`, `|`(<bar>), `F`
+then try `_`, `|`(bar), `F`
 
 		vmap _ <Plug>(ResizeH)
 		vmap <bar> <Plug>(ResizeV)

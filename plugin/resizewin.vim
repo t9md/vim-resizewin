@@ -18,14 +18,14 @@
 "   following keymap overwrite 'V'(which originally used as linewise-visual)
 "   but I set linewise-visual to 'L'.
 "   so for me I can use 'V' freely.
-
-      " vmap H <Plug>(ResizeH)
-      " vmap V <Plug>(ResizeV)
-      " vmap F <Plug>(ResizeHV)
-      " nmap H <Plug>(ResizeH)
-      " nmap V <Plug>(ResizeV)
-      " nmap F <Plug>(ResizeHV)
-
+"
+"		    vmap _     <Plug>(ResizeWinH)
+"		    vmap <bar> <Plug>(ResizeWinV)
+"		    vmap F     <Plug>(ResizeWinHV)
+"		    nmap _     <Plug>(ResizeWinH)
+"		    nmap <bar> <Plug>(ResizeWinV)
+"		    nmap F     <Plug>(ResizeWinHV)
+"
 "   Command
 "   ===================================================
 "   #### ResizeH
@@ -56,17 +56,17 @@ function! ResizeWin(resize_cmd)
     endif
 endfunction
 
-command! ResizeH  :call ResizeWin('resize')
-command! ResizeV  :call ResizeWin('vertical resize')
-command! ResizeHV :call ResizeWin('resize | vertical resize')
+command! ResizeWinH  :call ResizeWin('resize')
+command! ResizeWinV  :call ResizeWin('vertical resize')
+command! ResizeWinHV :call ResizeWin('resize | vertical resize')
 
-nnoremap <silent> <Plug>(ResizeH)  :ResizeH<CR>
-nnoremap <silent> <Plug>(ResizeV)  :ResizeV<CR>
-nnoremap <silent> <Plug>(ResizeHV) :ResizeHV<CR>
+nnoremap <silent> <Plug>(ResizeWinH)  :ResizeWinH<CR>
+nnoremap <silent> <Plug>(ResizeWinV)  :ResizeWinV<CR>
+nnoremap <silent> <Plug>(ResizeWinHV) :ResizeWinHV<CR>
 
-vnoremap <silent> <Plug>(ResizeH)  :<C-u>ResizeH<CR>
-vnoremap <silent> <Plug>(ResizeV)  :<C-u>ResizeV<CR>
-vnoremap <silent> <Plug>(ResizeHV) :<C-u>ResizeHV<CR>
+vnoremap <silent> <Plug>(ResizeWinH)  :<C-u>ResizeWinH<CR>
+vnoremap <silent> <Plug>(ResizeWinV)  :<C-u>ResizeWinV<CR>
+vnoremap <silent> <Plug>(ResizeWinHV) :<C-u>ResizeWinHV<CR>
 
 "reset &cpo back to users setting
 let &cpo = s:old_cpo
