@@ -8,16 +8,16 @@ resizewin.vim is minimal utility for resize win
 
 KeyMap Example
 ================================
-following keymap overwrite 'V'(which originally used as linewise-visual)
-but I set linewise-visual to 'L'.
-so for me I can use 'V' freely.
+set following keymap in your .vimrc.
+then split, vsplit several time.
+then try `_`, `|`(<bar>), `F`
 
-    vmap H <Plug>(ResizeH)
-    vmap V <Plug>(ResizeV)
-    vmap F <Plug>(ResizeHV)
-    nmap H <Plug>(ResizeH)
-    nmap V <Plug>(ResizeV)
-    nmap F <Plug>(ResizeHV)
+		vmap _ <Plug>(ResizeH)
+		vmap <bar> <Plug>(ResizeV)
+		vmap F <Plug>(ResizeHV)
+		nmap _ <Plug>(ResizeH)
+		nmap <bar> <Plug>(ResizeV)
+		nmap F <Plug>(ResizeHV)
 
 Command
 ===================================================
