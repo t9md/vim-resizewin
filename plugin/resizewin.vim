@@ -56,17 +56,31 @@ function! ResizeWin(resize_cmd)
     endif
 endfunction
 
-command! ResizeWinH  :call ResizeWin('resize')
-command! ResizeWinV  :call ResizeWin('vertical resize')
-command! ResizeWinHV :call ResizeWin('resize | vertical resize')
+command! ResizeWinMaxH  :call ResizeWin('resize')
+command! ResizeWinMaxV  :call ResizeWin('vertical resize')
+command! ResizeWinMaxHV :call ResizeWin('resize | vertical resize')
 
-nnoremap <silent> <Plug>(ResizeWinH)  :ResizeWinH<CR>
-nnoremap <silent> <Plug>(ResizeWinV)  :ResizeWinV<CR>
-nnoremap <silent> <Plug>(ResizeWinHV) :ResizeWinHV<CR>
+command! ResizeWinMinH  :call ResizeWin('resize 0')
+command! ResizeWinMinV  :call ResizeWin('vertical resize 0')
+command! ResizeWinMinHV :call ResizeWin('resize 0 | vertical resize 0')
 
-vnoremap <silent> <Plug>(ResizeWinH)  :<C-u>ResizeWinH<CR>
-vnoremap <silent> <Plug>(ResizeWinV)  :<C-u>ResizeWinV<CR>
-vnoremap <silent> <Plug>(ResizeWinHV) :<C-u>ResizeWinHV<CR>
+nnoremap <silent> <Plug>(ResizeWinMaxH)  :ResizeWinMaxH<CR>
+nnoremap <silent> <Plug>(ResizeWinMaxV)  :ResizeWinMaxV<CR>
+nnoremap <silent> <Plug>(ResizeWinMaxHV) :ResizeWinMaxHV<CR>
+
+vnoremap <silent> <Plug>(ResizeWinMaxH)  :<C-u>ResizeWinMaxH<CR>
+vnoremap <silent> <Plug>(ResizeWinMaxV)  :<C-u>ResizeWinMaxV<CR>
+vnoremap <silent> <Plug>(ResizeWinMaxHV) :<C-u>ResizeWinMaxHV<CR>
+
+nnoremap <silent> <Plug>(ResizeWinMinH)  :ResizeWinMinH<CR>
+nnoremap <silent> <Plug>(ResizeWinMinV)  :ResizeWinMinV<CR>
+nnoremap <silent> <Plug>(ResizeWinMinHV) :ResizeWinMinHV<CR>
+
+vnoremap <silent> <Plug>(ResizeWinMinH)  :<C-u>ResizeWinMinH<CR>
+vnoremap <silent> <Plug>(ResizeWinMinV)  :<C-u>ResizeWinMinV<CR>
+vnoremap <silent> <Plug>(ResizeWinMinHV) :<C-u>ResizeWinMinHV<CR>
+
+
 
 "reset &cpo back to users setting
 let &cpo = s:old_cpo
