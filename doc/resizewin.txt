@@ -16,7 +16,7 @@ Changelog					|resizewin-changelog|
 ==============================================================================
 INTRODUCTION						*resizewin-introduction*
 
-resizewin.vim is minimal utility for resize win
+resizewin is minimal utility for resize window
 
   * horizontally
   * vertically
@@ -30,6 +30,7 @@ So if you want, you need to set it manually.
 
 ==============================================================================
 EXAMPLE							*resizewin-examples*
+Set following in your .vimrc
 >
 	vmap _     <Plug>(ResizeWinH)
 	vmap <bar> <Plug>(ResizeWinV)
@@ -39,7 +40,6 @@ EXAMPLE							*resizewin-examples*
 	nmap <bar> <Plug>(ResizeWinV)
 	nmap F     <Plug>(ResizeWinHV)
 <
-
 then try '_' or '|' or 'F' in buffer.
 
 ==============================================================================
