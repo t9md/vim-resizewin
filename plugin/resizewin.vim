@@ -5,47 +5,24 @@
 " WebPage: http://github.com/t9md/resizewin.vim
 " License: BSD
 " Usage:
-"   What is this?
-"   ==================================
-"   resizewin.vim is minimal utility for resize win
 
-    " * horizontally
-    " * vertically
-    " * full(both horizontally and vertically)
+" GUARD: {{{1
+"============================================================
+if exists('g:loaded_resizewin')
+  finish
+endif
 
-"   KeyMap Example
-"   ================================
-"   following keymap overwrite 'V'(which originally used as linewise-visual)
-"   but I set linewise-visual to 'L'.
-"   so for me I can use 'V' freely.
-"
-"		    vmap _     <Plug>(ResizeWinH)
-"		    vmap <bar> <Plug>(ResizeWinV)
-"		    vmap F     <Plug>(ResizeWinHV)
-"		    nmap _     <Plug>(ResizeWinH)
-"		    nmap <bar> <Plug>(ResizeWinV)
-"		    nmap F     <Plug>(ResizeWinHV)
-"
-"   Command
-"   ===================================================
-"   #### ResizeH
-"   resize horizontally
-
-"   #### ResizeV
-"   resize vertically
-
-"   #### ResizeHV
-"   resize horizontally and vertically
-
+let g:loaded_resizewin = 1
 let s:old_cpo = &cpo
 set cpo&vim
 
+" MAIN: {{{1
+"============================================================
 unlet! s:restore_cmd
 
 function! ResizeWin(resize_cmd)
     if exists('s:restore_cmd')
         try
-            " echo s:restore_cmd
             execute s:restore_cmd
         finally
             unlet! s:restore_cmd
@@ -56,6 +33,8 @@ function! ResizeWin(resize_cmd)
     endif
 endfunction
 
+" COMMAND: {{{1
+"============================================================
 command! ResizeWinMaxH  :call ResizeWin('resize')
 command! ResizeWinMaxV  :call ResizeWin('vertical resize')
 command! ResizeWinMaxHV :call ResizeWin('resize | vertical resize')
@@ -64,6 +43,8 @@ command! ResizeWinMinH  :call ResizeWin('resize 0')
 command! ResizeWinMinV  :call ResizeWin('vertical resize 0')
 command! ResizeWinMinHV :call ResizeWin('resize 0 | vertical resize 0')
 
+" VERTUAL KEYMAP: {{{1
+"============================================================
 nnoremap <silent> <Plug>(ResizeWinMaxH)  :ResizeWinMaxH<CR>
 nnoremap <silent> <Plug>(ResizeWinMaxV)  :ResizeWinMaxV<CR>
 nnoremap <silent> <Plug>(ResizeWinMaxHV) :ResizeWinMaxHV<CR>
@@ -80,7 +61,8 @@ vnoremap <silent> <Plug>(ResizeWinMinH)  :<C-u>ResizeWinMinH<CR>
 vnoremap <silent> <Plug>(ResizeWinMinV)  :<C-u>ResizeWinMinV<CR>
 vnoremap <silent> <Plug>(ResizeWinMinHV) :<C-u>ResizeWinMinHV<CR>
 
-
-
-"reset &cpo back to users setting
+" FIN: {{{1
+"============================================================
 let &cpo = s:old_cpo
+
+" vim: set sw=4 sts=4 et fdm=marker fdc=3 fdl=3:
