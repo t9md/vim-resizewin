@@ -2,9 +2,8 @@
 " File: resizewin.vim
 " Author: t9md <taqumd@gmail.com>
 " Version: 0.2
-" WebPage: http://github.com/t9md/resizewin.vim
+" WebPage: https://github.com/t9md/vim-resizewin
 " License: BSD
-" Usage:
 
 " GUARD: {{{1
 "============================================================
