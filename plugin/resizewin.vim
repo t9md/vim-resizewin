@@ -1,7 +1,7 @@
 "=============================================================================
 " File: resizewin.vim
 " Author: t9md <taqumd@gmail.com>
-" Version: 1.0
+" Version: 0.2
 " WebPage: http://github.com/t9md/resizewin.vim
 " License: BSD
 " Usage:

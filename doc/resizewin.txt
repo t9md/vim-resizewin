@@ -1,6 +1,6 @@
 *resizewin.txt*	widen window temporary then restore
 
-Version: 0.1
+Version: 0.2
 Author : t9md <taqumd@gmail.com>
 
 ==============================================================================
