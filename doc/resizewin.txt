@@ -73,6 +73,6 @@ COMMANDS						*resizewin-commands*
 CHANGELOG						*resizewin-changelog*
 
 2011-06-13
-- first release
+	- first release
 ==============================================================================
 vim:tw=78:ts=8:ft=help:norl:
