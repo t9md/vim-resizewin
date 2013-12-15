@@ -1,3 +1,7 @@
+DONT USE THIS
+==================================
+experimental
+
 What is this?
 ==================================
 resizewin.vim is minimal utility for resize win

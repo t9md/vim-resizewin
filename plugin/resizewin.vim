@@ -17,48 +17,50 @@ set cpo&vim
 
 " MAIN: {{{1
 "============================================================
-unlet! s:restore_cmd
+nnoremap <silent> <Plug>(resizewin-h-toggle) :<C-u>call resizewin#toggle('h')<CR>
+nnoremap <silent> <Plug>(resizewin-v-toggle) :<C-u>call resizewin#toggle('v')<CR>
 
-function! ResizeWin(resize_cmd)
-    if exists('s:restore_cmd')
-        try
-            execute s:restore_cmd
-        finally
-            unlet! s:restore_cmd
-        endtry
-    else
-        let s:restore_cmd = winrestcmd()
-        execute a:resize_cmd
-    endif
-endfunction
 
-" COMMAND: {{{1
-"============================================================
-command! ResizeWinMaxH  :call ResizeWin('resize')
-command! ResizeWinMaxV  :call ResizeWin('vertical resize')
-command! ResizeWinMaxHV :call ResizeWin('resize | vertical resize')
+" function! ResizeWin(resize_cmd)
+    " if exists('s:restore_cmd')
+        " try
+            " execute s:restore_cmd
+        " finally
+            " unlet! s:restore_cmd
+        " endtry
+    " else
+        " let s:restore_cmd = winrestcmd()
+        " execute a:resize_cmd
+    " endif
+" endfunction
 
-command! ResizeWinMinH  :call ResizeWin('resize 0')
-command! ResizeWinMinV  :call ResizeWin('vertical resize 0')
-command! ResizeWinMinHV :call ResizeWin('resize 0 | vertical resize 0')
+" " COMMAND: {{{1
+" "============================================================
+" command! ResizeWinMaxH  :call ResizeWin('resize')
+" command! ResizeWinMaxV  :call ResizeWin('vertical resize')
+" command! ResizeWinMaxHV :call ResizeWin('resize | vertical resize')
 
-" VERTUAL KEYMAP: {{{1
-"============================================================
-nnoremap <silent> <Plug>(ResizeWinMaxH)  :ResizeWinMaxH<CR>
-nnoremap <silent> <Plug>(ResizeWinMaxV)  :ResizeWinMaxV<CR>
-nnoremap <silent> <Plug>(ResizeWinMaxHV) :ResizeWinMaxHV<CR>
+" command! ResizeWinMinH  :call ResizeWin('resize 0')
+" command! ResizeWinMinV  :call ResizeWin('vertical resize 0')
+" command! ResizeWinMinHV :call ResizeWin('resize 0 | vertical resize 0')
 
-vnoremap <silent> <Plug>(ResizeWinMaxH)  :<C-u>ResizeWinMaxH<CR>
-vnoremap <silent> <Plug>(ResizeWinMaxV)  :<C-u>ResizeWinMaxV<CR>
-vnoremap <silent> <Plug>(ResizeWinMaxHV) :<C-u>ResizeWinMaxHV<CR>
+" " VERTUAL KEYMAP: {{{1
+" "============================================================
+" nnoremap <silent> <Plug>(ResizeWinMaxH)  :ResizeWinMaxH<CR>
+" nnoremap <silent> <Plug>(ResizeWinMaxV)  :ResizeWinMaxV<CR>
+" nnoremap <silent> <Plug>(ResizeWinMaxHV) :ResizeWinMaxHV<CR>
 
-nnoremap <silent> <Plug>(ResizeWinMinH)  :ResizeWinMinH<CR>
-nnoremap <silent> <Plug>(ResizeWinMinV)  :ResizeWinMinV<CR>
-nnoremap <silent> <Plug>(ResizeWinMinHV) :ResizeWinMinHV<CR>
+" vnoremap <silent> <Plug>(ResizeWinMaxH)  :<C-u>ResizeWinMaxH<CR>
+" vnoremap <silent> <Plug>(ResizeWinMaxV)  :<C-u>ResizeWinMaxV<CR>
+" vnoremap <silent> <Plug>(ResizeWinMaxHV) :<C-u>ResizeWinMaxHV<CR>
 
-vnoremap <silent> <Plug>(ResizeWinMinH)  :<C-u>ResizeWinMinH<CR>
-vnoremap <silent> <Plug>(ResizeWinMinV)  :<C-u>ResizeWinMinV<CR>
-vnoremap <silent> <Plug>(ResizeWinMinHV) :<C-u>ResizeWinMinHV<CR>
+" nnoremap <silent> <Plug>(ResizeWinMinH)  :ResizeWinMinH<CR>
+" nnoremap <silent> <Plug>(ResizeWinMinV)  :ResizeWinMinV<CR>
+" nnoremap <silent> <Plug>(ResizeWinMinHV) :ResizeWinMinHV<CR>
+
+" vnoremap <silent> <Plug>(ResizeWinMinH)  :<C-u>ResizeWinMinH<CR>
+" vnoremap <silent> <Plug>(ResizeWinMinV)  :<C-u>ResizeWinMinV<CR>
+" vnoremap <silent> <Plug>(ResizeWinMinHV) :<C-u>ResizeWinMinHV<CR>
 
 " FIN: {{{1
 "============================================================
